@@ -1,0 +1,38 @@
+{
+  "name": "tseval",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ts evaluation",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint src/**/*.ts",
+    "package": "ncc build --source-map",
+    "all": "npm run build && npm run format && npm run lint && npm run package",
+    "run": "ts-node src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbuschka/tseval.git"
+  },
+  "keywords": [
+    "node",
+    "typescript"
+  ],
+  "author": "cbuschka",
+  "license": "MIT",
+  "dependencies": {
+    "ts-node": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.25",
+    "@vercel/ncc": "^0.24.1",
+    "@types/semver": "^6.2.1",
+    "eslint": "^7.10.0",
+    "eslint-plugin-github": "^4.1.1",
+    "prettier": "^2.0.5",
+    "typescript": "^3.9.7"
+  }
+}
